@@ -19,6 +19,10 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
         array (
             'Symfony\\Component\\Yaml\\' => 23,
         ),
+        'P' => 
+        array (
+            'Pagination\\' => 11,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -41,6 +45,10 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Pagination\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -57,10 +65,6 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
-            ),
-            'Pagination' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
             ),
         ),
     );
@@ -442,6 +446,7 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'Pagination\\Pagination' => __DIR__ . '/../..' . '/src/Pagination.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
