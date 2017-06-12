@@ -58,6 +58,10 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
+            'Pagination' => 
+            array (
+                0 => __DIR__ . '/../..' . '/src',
+            ),
         ),
     );
 

@@ -1,5 +1,22 @@
 {
+    "name": "php-pagination",
+    "description": "",
+    "keywords": [""],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Rafael Paulino",
+            "email": "rafaclasses@gmail.com",
+            "homepage": "http://rafaacademy.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "5.5.*"
+    },
+    "autoload": {
+        "psr-0": { "Pagination": "src/" }
     }
 }
