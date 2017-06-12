@@ -13,7 +13,7 @@
 >
   <testsuites>
     <testsuite name="Pagination Test Suite">
-      <directory>./tests/Pagination/</directory>
+      <directory>./Tests/</directory>
     </testsuite>
   </testsuites>
 
