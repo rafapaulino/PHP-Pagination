@@ -8,11 +8,17 @@ class Pagination {
     protected $_recordsPerPage;
     protected $_totalOfResults;
 
+    public function __construct( int $totalOfResults, int $recordsPerPage ) {
+        $this->setPage(1);
+        $this->setTotalOfResults($totalOfResults);
+        $this->setRecordsPerPage($recordsPerPage);
+    }
+
     public function getPage(): int {
         return $this->_page;
     }
 
-    public function setPage(int $page) {
+    protected function setPage(int $page) {
         $this->_page = $page;
     }
 
@@ -20,7 +26,7 @@ class Pagination {
         return $this->_recordsPerPage;
     }
 
-    public function setRecordsPerPage(int $recordsPerPage) {
+    protected function setRecordsPerPage(int $recordsPerPage) {
         $this->_recordsPerPage = $recordsPerPage;
     }
 
@@ -28,7 +34,7 @@ class Pagination {
         return $this->_totalOfResults;
     }
     
-    public function setTotalOfResults(int $totalOfResults) {
+    protected function setTotalOfResults(int $totalOfResults) {
         $this->_totalOfResults = $totalOfResults;
     }     
 }

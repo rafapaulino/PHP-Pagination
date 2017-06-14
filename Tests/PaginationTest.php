@@ -10,18 +10,28 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
 
     protected function setUp()
     {
-        $this->_pagination = new Pagination;
+        $totalResults = 100;
+		$recordsPerPage = 10;
+		$this->_pagination = new Pagination($totalResults,$recordsPerPage);
     }
-
-	public function testTrueIsTrue()
-	{
-	    $foo = true;
-	    $this->assertTrue($foo);
-	}
 
 	public function testInstanceOfPagination() 
 	{
 		$this->assertInstanceOf(Pagination::class, $this->_pagination);
 	}
-	
+
+	public function testTypeOfPage()
+    {
+        $this->assertInternalType('integer', $this->_pagination->getPage());
+    }
+
+	public function testRecordsPerPage()
+    {
+        $this->assertInternalType('integer', $this->_pagination->getRecordsPerPage());
+    }
+
+	public function testTotalOfResults()
+    {
+        $this->assertInternalType('integer', $this->_pagination->getTotalOfResults());
+    }	
 }
