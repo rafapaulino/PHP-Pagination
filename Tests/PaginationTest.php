@@ -33,5 +33,29 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
 	public function testTotalOfResults()
     {
         $this->assertInternalType('integer', $this->_pagination->getTotalOfResults());
-    }	
+    }
+
+    /**
+     * @expectedException LengthException
+     */
+	public function testExceptionForZeroInTotal()
+	{
+		new Pagination(0,10);
+	}
+
+	/**
+     * @expectedException LengthException
+     */
+	public function testExceptionForZeroInPerPage()
+	{
+		new Pagination(100,0);
+	}
+
+	/**
+     * @expectedException LengthException
+     */
+	public function testExceptionForPerPageLargeThanTotal()
+	{
+		new Pagination(5,10);
+	}	
 }

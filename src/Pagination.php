@@ -43,16 +43,16 @@ class Pagination {
 
     protected function checkIfTotalIsGreaterThanZero() {
         if ( $this->getTotalOfResults() <= 0 )
-        throw new LengthException("Total results must be greater than zero!");
+        throw new \LengthException("Total results must be greater than zero!");
     } 
 
     protected function checkIfRecordsIsGreaterThanZero() {
         if ( $this->getRecordsPerPage() <= 0 )
-        throw new LengthException("Results per page must be greater than zero!");
+        throw new \LengthException("Results per page must be greater than zero!");
     } 
 
     protected function checkIfTotalIsLargerThanPerPage() {
         if ( $this->getTotalOfResults() < $this->getRecordsPerPage() )
-        throw new LengthException("Total results must be greater than the number of results per page!");
+        throw new \LengthException("Total results must be greater than the number of results per page!");
     }   
 }
