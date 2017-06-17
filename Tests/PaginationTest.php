@@ -109,4 +109,10 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
     {
         $this->assertEquals(1, $this->_pagination->goBack(190));
     }
+
+	public function testPageIsGreaterOfTotalOfPages()
+    {
+        $pagination = new Pagination(100,10,1000);
+		$this->assertEquals($pagination->getTotalOfPages(), $pagination->getPage());
+    }
 }

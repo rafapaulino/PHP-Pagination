@@ -23,6 +23,7 @@ class Pagination {
         $this->checkIfRecordsIsGreaterThanZero();
         $this->checkIfTotalIsLargerThanPerPage();
         $this->setTotalOfPages();
+        $this->checkIfPageIsGreaterThanTotalOfPages();
         $this->setIndexesOfPages();
         $this->setFirstPage();
         $this->setLastPage();
@@ -37,7 +38,7 @@ class Pagination {
     protected function setPage(int $page) {
         if ($page <= 1) 
         $page = 1;
-        
+
         $this->_page = $page;
     }
 
@@ -71,6 +72,15 @@ class Pagination {
         if ( $this->getTotalOfResults() < $this->getRecordsPerPage() )
         throw new \LengthException("Total results must be greater than the number of results per page!");
     } 
+
+    /*
+     * Check If page passed is bigger than total of pages
+     * If page is bigger, so page is equal of total of pages
+    */
+    protected function checkIfPageIsGreaterThanTotalOfPages() {
+        if ( $this->getTotalOfPages() < $this->getPage() )
+        $this->setPage($this->getTotalOfPages());
+    }
 
     public function getTotalOfPages(): int {
         return $this->_totalOfPages;
