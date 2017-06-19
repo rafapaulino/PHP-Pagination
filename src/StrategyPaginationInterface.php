@@ -2,6 +2,5 @@
 namespace Pagination;
 
 interface StrategyPaginationInterface {
-    public function __construct(Pagination $pagination);
-    public function getIndexes();
+    public function getIndexes(Pagination $pagination);
 }

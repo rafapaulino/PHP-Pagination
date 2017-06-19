@@ -13,6 +13,7 @@ class Pagination {
     protected $_lastPage;
     protected $_nextPage;
     protected $_previousPage;
+    private $_type;
 
 
     public function __construct( int $totalOfResults, int $recordsPerPage, int $page ) {
@@ -157,5 +158,13 @@ class Pagination {
         $back = 1;
 
         return $back;
+    }
+
+    public function setType($type) {
+        $this->_type = $type;
+    }
+
+    public function getIndexes() {
+        return $this->_type->getIndexes($this);
     }
 }

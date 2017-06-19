@@ -14,10 +14,13 @@ $pagination = new Pagination(1000, 10, 1);
 //var_dump($pagination);
 //debug_print_backtrace();
 
-$simple = new StrategySimple($pagination);
-$indexes = $simple->getIndexes();
+$pagination->setType(new StrategySimple());
+$indexes = $pagination->getIndexes();
+
+//$simple = new StrategySimple($pagination);
+//$indexes = $simple->getIndexes();
+//var_dump($indexes);
 var_dump($indexes);
-var_dump($simple);
 debug_print_backtrace();
 echo '</pre>';
 
