@@ -20,3 +20,61 @@ var_dump($indexes);
 var_dump($simple);
 debug_print_backtrace();
 echo '</pre>';
+
+
+interface OutputInterface
+{
+    public function load();
+}
+
+class SerializedArrayOutput implements OutputInterface
+{
+    public function load()
+    {
+        return serialize($arrayOfData);
+    }
+}
+
+class JsonStringOutput implements OutputInterface
+{
+    public function load()
+    {
+        return json_encode($arrayOfData);
+    }
+}
+
+class ArrayOutput implements OutputInterface
+{
+    public function load()
+    {
+        return $arrayOfData;
+    }
+}
+
+class SomeClient
+{
+    private $output;
+
+    public function setOutput(OutputInterface $outputType)
+    {
+        $this->output = $outputType;
+    }
+
+    public function loadOutput()
+    {
+        return $this->output->load();
+    }
+}
+
+//http://br.phptherightway.com/pages/Design-Patterns.html
+$client = new SomeClient();
+
+// Quer um array?
+$client->setOutput(new ArrayOutput());
+$data = $client->loadOutput();
+var_dump($data);
+
+// Quer um JSON?
+$client->setOutput(new JsonStringOutput());
+$data = $client->loadOutput();
+var_dump($data);
