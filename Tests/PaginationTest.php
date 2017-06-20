@@ -1,8 +1,8 @@
 <?php 
-
+declare(strict_types = 1);
 namespace Pagination\Tests;
-
 use Pagination\Pagination;
+use Pagination\StrategySimple;
 
 class PaginationTest extends \PHPUnit_Framework_TestCase {
 
@@ -52,13 +52,7 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
 		new Pagination(100,0,1);
 	}
 
-	/**
-     * @expectedException LengthException
-     */
-	public function testExceptionForPerPageLargeThanTotal()
-	{
-		new Pagination(5,10,1);
-	}	
+	
 
 	public function testTotalOfPagesType()
     {
@@ -110,9 +104,31 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(1, $this->_pagination->goBack(190));
     }
 
+    public function testTotalOfResultsIsOne()
+    {
+        $pagination = new Pagination(1,10,1);
+        $this->assertEquals(1, $pagination->getAllIndexesOfPages()->count());
+    }
+
 	public function testPageIsGreaterOfTotalOfPages()
     {
         $pagination = new Pagination(100,10,1000);
 		$this->assertEquals($pagination->getTotalOfPages(), $pagination->getPage());
     }
+
+	/**
+     * @expectedException LengthException
+     */
+    public function testSimpleTotalIndexValue()
+    {
+        $simple = new StrategySimple(0);
+    }
+
+	public function testSimpleIndexes()
+	{
+		$pagination = new Pagination(1,10,1);
+        $indexes = $pagination->getIndexes(new StrategySimple(20));
+        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $indexes->count());
+	}
+
 }
