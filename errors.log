@@ -1,0 +1,12 @@
+[20-Jun-2017 09:23:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to undefined method Pagination\Pagination::getIndexesOfPages() in C:\xampp\htdocs\php-pagination\src\StrategySimple.php:16
+Stack trace:
+#0 C:\xampp\htdocs\php-pagination\src\Pagination.php(162): Pagination\StrategySimple->getIndexes(Object(Pagination\Pagination))
+#1 C:\xampp\htdocs\php-pagination\index.php(17): Pagination\Pagination->getIndexes(Object(Pagination\StrategySimple))
+#2 {main}
+  thrown in C:\xampp\htdocs\php-pagination\src\StrategySimple.php on line 16
+[20-Jun-2017 09:24:17 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 52
+[20-Jun-2017 09:24:17 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 44
+[20-Jun-2017 09:29:12 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 50
+[20-Jun-2017 09:29:13 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 42
+[20-Jun-2017 09:29:32 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 50
+[20-Jun-2017 09:29:32 America/Sao_Paulo] PHP Notice:  Undefined variable: arrayOfData in C:\xampp\htdocs\php-pagination\index.php on line 42

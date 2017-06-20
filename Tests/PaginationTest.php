@@ -72,12 +72,12 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
 
 	public function testIndexesOfPagesIsArrayObject()
     {
-        $this->assertInstanceOf('ArrayObject', $this->_pagination->getIndexesOfPages());
+        $this->assertInstanceOf('ArrayObject', $this->_pagination->getAllIndexesOfPages());
     }
 
 	public function testIndexesOfPagesIsGreaterThanZero()
     {
-        $this->assertCount(10, $this->_pagination->getIndexesOfPages());
+        $this->assertCount(10, $this->_pagination->getAllIndexesOfPages());
     }
 
 	public function testFirstPage()

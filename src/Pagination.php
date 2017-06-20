@@ -13,8 +13,6 @@ class Pagination {
     protected $_lastPage;
     protected $_nextPage;
     protected $_previousPage;
-    private $_type;
-
 
     public function __construct( int $totalOfResults, int $recordsPerPage, int $page ) {
         $this->setPage($page);
@@ -25,7 +23,7 @@ class Pagination {
         $this->checkIfTotalIsLargerThanPerPage();
         $this->setTotalOfPages();
         $this->checkIfPageIsGreaterThanTotalOfPages();
-        $this->setIndexesOfPages();
+        $this->setAllIndexesOfPages();
         $this->setFirstPage();
         $this->setLastPage();
         $this->setNextPage();
@@ -91,11 +89,11 @@ class Pagination {
         $this->_totalOfPages = (int) ceil( $this->getTotalOfResults() / $this->getRecordsPerPage() );
     }   
 
-    public function getIndexesOfPages(): \ArrayObject {
+    public function getAllIndexesOfPages(): \ArrayObject {
         return $this->_indexesOfPages;
     }
     
-    protected function setIndexesOfPages() {
+    protected function setAllIndexesOfPages() {
         $indexes = range(1, $this->getTotalOfPages());
         $this->_indexesOfPages = new \ArrayObject($indexes);
     }
@@ -160,11 +158,7 @@ class Pagination {
         return $back;
     }
 
-    public function setType($type) {
-        $this->_type = $type;
-    }
-
-    public function getIndexes() {
-        return $this->_type->getIndexes($this);
+    public function getIndexes($type) {
+        return $type->getIndexes($this);
     }
 }
