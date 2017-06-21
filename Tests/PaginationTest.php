@@ -3,6 +3,7 @@ declare(strict_types = 1);
 namespace Pagination\Tests;
 use Pagination\Pagination;
 use Pagination\StrategySimple;
+use Pagination\StrategyPHPBB;
 
 class PaginationTest extends \PHPUnit_Framework_TestCase {
 
@@ -121,14 +122,42 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSimpleTotalIndexValue()
     {
-        $simple = new StrategySimple(0);
+        new StrategySimple(0);
     }
 
-	public function testSimpleIndexes()
+	public function testSimpleIndexesWithOneResult()
 	{
 		$pagination = new Pagination(1,10,1);
         $indexes = $pagination->getIndexes(new StrategySimple(20));
         $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $indexes->count());
 	}
 
+	/**
+     * @expectedException LengthException
+     */
+    public function testPHPBBTotalIndexValue()
+    {
+        new StrategyPHPBB(0,0);
+    }
+
+    /**
+     * @expectedException LengthException
+     */
+    public function testPHPBBTotalIndexExtrasValue()
+    {
+        new StrategyPHPBB(10,0);
+    }
+
+    public function testPHPBBIndexesWithOneResult()
+	{
+		$pagination = new Pagination(1,10,1);
+        $indexes = $pagination->getIndexes(new StrategyPHPBB(20,4));
+        $indexesArray = $indexes->getArrayCopy();    
+        //test indexes
+        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), count($indexesArray['indexes']));
+        //test initial
+        $this->assertEquals(0, count($indexesArray['initial']));
+        //test final
+        $this->assertEquals(0, count($indexesArray['final']));
+	}
 }

@@ -11,6 +11,7 @@ class StrategyPHPBB implements StrategyPaginationInterface {
         $this->_totalIndexes = $totalIndexes;
         $this->_totalIndexesExtras = $totalIndexesExtras;
         $this->checkTotalIndexesValue();
+        $this->checkTotalIndexesExtrasValue();
     }
 
     public function getIndexes(Pagination $pagination) {
@@ -71,5 +72,10 @@ class StrategyPHPBB implements StrategyPaginationInterface {
     protected function checkTotalIndexesValue() {
         if ( $this->_totalIndexes <= 0 )
         throw new \LengthException("Total indexes must be greater than zero!");
+    }
+
+    protected function checkTotalIndexesExtrasValue() {
+        if ( $this->_totalIndexesExtras <= 0 )
+        throw new \LengthException("Total indexes Extras must be greater than zero!");
     }
 }
