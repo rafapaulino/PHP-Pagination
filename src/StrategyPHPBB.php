@@ -66,7 +66,12 @@ class StrategyPHPBB implements StrategyPaginationInterface {
         } else {
             $indexes['indexes'] = $pagination->getAllIndexesOfPages()->getArrayCopy();
         }
-        return new \ArrayObject($indexes);
+
+        return (object) array(
+            'indexes' => new \ArrayObject($indexes['indexes']),
+            'initial' => new \ArrayObject($indexes['initial']),
+            'final' => new \ArrayObject($indexes['final'])
+        ); 
     }
 
     protected function checkTotalIndexesValue() {

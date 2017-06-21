@@ -17,3 +17,71 @@ Stack trace:
 [20-Jun-2017 13:37:05 America/Sao_Paulo] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in C:\xampp\htdocs\php-pagination\examples\simple.php on line 2
 [20-Jun-2017 13:37:05 America/Sao_Paulo] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.;C:\php\pear') in C:\xampp\htdocs\php-pagination\examples\simple.php on line 2
 [20-Jun-2017 13:46:39 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\xampp\htdocs\php-pagination\examples\simple.php on line 46
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 85
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 85
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 85
+[21-Jun-2017 13:23:51 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:27:48 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:31:23 America/Sao_Paulo] PHP Notice:  Undefined property: ArrayIterator::$indexes in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 15
+[21-Jun-2017 13:31:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function valid() on null in C:\xampp\htdocs\php-pagination\examples\phpbb.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 84
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:31:39 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:33:14 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:34:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getIterator() on array in C:\xampp\htdocs\php-pagination\examples\phpbb.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 16
+[21-Jun-2017 13:34:29 America/Sao_Paulo] PHP Notice:  Undefined property: ArrayObject::$indexes in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 16
+[21-Jun-2017 13:34:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getIterator() on null in C:\xampp\htdocs\php-pagination\examples\phpbb.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 16
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:37:16 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:42:41 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 86
+[21-Jun-2017 13:47:32 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:23 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
+[21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88

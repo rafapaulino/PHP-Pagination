@@ -132,6 +132,13 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $indexes->count());
 	}
 
+    public function testSimpleIndexesResults()
+	{
+        $pagination = new Pagination(1000,10,1);
+        $indexes = $pagination->getIndexes(new StrategySimple(20));
+        $this->assertEquals(20, $indexes->count());
+	}
+
 	/**
      * @expectedException LengthException
      */
@@ -152,12 +159,44 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
 	{
 		$pagination = new Pagination(1,10,1);
         $indexes = $pagination->getIndexes(new StrategyPHPBB(20,4));
-        $indexesArray = $indexes->getArrayCopy();    
+        $iterator = $indexes->indexes->getIterator();
+        $initial = $indexes->initial->getIterator();
+        $final = $indexes->final->getIterator();     
         //test indexes
-        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), count($indexesArray['indexes']));
+        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $iterator->count());
         //test initial
-        $this->assertEquals(0, count($indexesArray['initial']));
+        $this->assertEquals(0, $initial->count());
         //test final
-        $this->assertEquals(0, count($indexesArray['final']));
+        $this->assertEquals(0, $final->count());
+	}
+
+    public function testPHPBBIndexesWithLastPage()
+	{
+		$pagination = new Pagination(1000,10,100);
+        $indexes = $pagination->getIndexes(new StrategyPHPBB(20,4));
+        $iterator = $indexes->indexes->getIterator();
+        $initial = $indexes->initial->getIterator();
+        $final = $indexes->final->getIterator();    
+        //test indexes
+        $this->assertEquals(20, $iterator->count());
+        //test initial
+        $this->assertEquals(4, $initial->count());
+        //test final
+        $this->assertEquals(0, $final->count());
+	}
+
+    public function testPHPBBIndexesWithFirstPage()
+	{
+		$pagination = new Pagination(1000,10,1);
+        $indexes = $pagination->getIndexes(new StrategyPHPBB(20,4));
+        $iterator = $indexes->indexes->getIterator();
+        $initial = $indexes->initial->getIterator();
+        $final = $indexes->final->getIterator();   
+        //test indexes
+        $this->assertEquals(20, $iterator->count());
+        //test initial
+        $this->assertEquals(0, $initial->count());
+        //test final
+        $this->assertEquals(4, $final->count());
 	}
 }
