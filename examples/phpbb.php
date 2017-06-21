@@ -34,7 +34,7 @@ include 'header.html';
 </div>
 
 <div class="row">
-    <div class="col-md-3">.col-md-9 .col-md-push-3</div>
+    <?php include 'menu.html'; ?>
     <div class="col-md-9">
 
         <div class="row">
