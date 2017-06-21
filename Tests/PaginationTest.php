@@ -4,6 +4,7 @@ namespace Pagination\Tests;
 use Pagination\Pagination;
 use Pagination\StrategySimple;
 use Pagination\StrategyPHPBB;
+use Pagination\StrategyJumping;
 
 class PaginationTest extends \PHPUnit_Framework_TestCase {
 
