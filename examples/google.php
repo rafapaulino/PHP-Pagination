@@ -11,7 +11,7 @@ $page = 1;
 //use pagination class with results, per page and page
 $pagination = new Pagination(1000, 10, $page);
 //get indexes in page
-$indexes = $pagination->getIndexes(new StrategyGoogle(10,4));
+$indexes = $pagination->getIndexes(new StrategyGoogle(10));
 $iterator = $indexes->getIterator();
 
 //get all indexes
@@ -42,7 +42,7 @@ include 'header.html';
                     &#60;&#63;php
                     require '../vendor/autoload.php';
                     use Pagination\Pagination;
-                    use Pagination\StrategySimple;
+                    use Pagination\StrategyGoogle;
 
                     if ( isset($_GET['page']) && is_numeric($_GET['page']) )
                     $page = $_GET['page'];
@@ -52,16 +52,12 @@ include 'header.html';
                     //use pagination class with results, per page and page
                     $pagination = new Pagination(1000, 10, $page);
                     //get indexes in page
-                    $indexes = $pagination->getIndexes(new StrategySimple(15));
+                    $indexes = $pagination->getIndexes(new StrategyGoogle(10));
                     $iterator = $indexes->getIterator();
-                    //get first page
-                    $pagination->getFirstPage();
-                    //get last page
-                    $pagination->getLastPage();
-                    //get previous page
-                    $pagination->getPreviousPage();
-                    //get next page
-                    $pagination->getNextPage();
+
+                    //get all indexes
+                    $all = $pagination->getAllIndexesOfPages();
+                    $iteratorAll = $all->getIterator();
                     &#63;&#62;                        
                 </pre>
             </div>

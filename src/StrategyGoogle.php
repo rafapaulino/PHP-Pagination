@@ -4,54 +4,39 @@ use Pagination\StrategyPaginationInterface;
 
 class StrategyGoogle implements StrategyPaginationInterface {
 
-    private $_indexes;
-    private $_additionalIndexes;
+    private $_totalIndexes;
 
-    public function __construct(int $indexes, int $additionalIndexes) {
-        $this->_indexes = $indexes;
-        $this->_additionalIndexes = $additionalIndexes;
-        $this->checkIndexesValue();
-        $this->checkAdditionalIndexesValue();
-        $this->checkAdditionalIsBiggerIndexes();
+    public function __construct(int $totalIndexes) {
+        $this->_totalIndexes = $totalIndexes;
+        $this->checkTotalIndexesValue();
     }
 
     public function getIndexes(Pagination $pagination) {
 
-        if($pagination->getTotalOfPages() > $this->_indexes) {
+        if($pagination->getTotalOfPages() > $this->_totalIndexes) {
             
-            if($pagination->getPage() == 1) {
-                $indexes = array_slice(
-                    $pagination->getAllIndexesOfPages()->getArrayCopy(), 
-                    0, 
-                    $this->_indexes
-                );
-            } else {
-                $currentIndex = (int) $pagination->getPage() - 1;
-                $pause = ($pagination->getTotalOfPages() - $this->_indexes);
-                $add = $currentIndex + $this->_additionalIndexes;
+            $currentIndex = (int) $pagination->getPage() - 1;
+            $pause = ($pagination->getTotalOfPages() - $this->_totalIndexes);
+            $half = (int) ceil( $this->_totalIndexes / 2 ); 
+            
+            if($this->_totalIndexes % 2 == 0)
+            $center = $half;
+            else
+            $center = intval($this->_totalIndexes - $half);
+            
+            if($currentIndex > $center)
+            $currentIndex = intval($currentIndex - $center);
+            else
+            $currentIndex = 0;
+           
+            if($pagination->getPage() > $pause)
+            $currentIndex = $pause;
 
-                if($this->_indexes > $add)
-                $add = $this->_indexes;
-
-                $half = (int) ceil( $add / 2 );
-
-                if($this->_indexes % 2 == 0)
-                $center = $half;
-                else
-                $center = intval($this->_indexes - $half);
-
-                if($currentIndex > $center)
-                $currentIndex = intval($currentIndex - $center);
-
-                if($pagination->getPage() > $pause)
-                $currentIndex = $pause;
-
-                $indexes = array_slice(
-                    $pagination->getAllIndexesOfPages()->getArrayCopy(), 
-                    $currentIndex, 
-                    $this->_indexes
-                );
-            }
+            $indexes = array_slice(
+                $pagination->getAllIndexesOfPages()->getArrayCopy(), 
+                $currentIndex, 
+                $this->_totalIndexes
+            );
 
         } else {
             $indexes = $pagination->getAllIndexesOfPages()->getArrayCopy();
@@ -59,18 +44,8 @@ class StrategyGoogle implements StrategyPaginationInterface {
         return new \ArrayObject($indexes);
     }
 
-    protected function checkIndexesValue() {
-        if ( $this->_indexes <= 0 )
-        throw new \LengthException("Indexes must be greater than zero!");
-    }
-
-    protected function checkAdditionalIndexesValue() {
-        if ( $this->_additionalIndexes <= 0 )
-        throw new \LengthException("Additional indexes must be greater than zero!");
-    }
-
-    protected function checkAdditionalIsBiggerIndexes() {
-        if ( $this->_additionalIndexes > $this->_indexes )
-        throw new \LengthException("Page indices should be greater than the value of the additional indices!");
+    protected function checkTotalIndexesValue() {
+        if ( $this->_totalIndexes <= 0 )
+        throw new \LengthException("Total indexes must be greater than zero!");
     }
 }

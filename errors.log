@@ -95,3 +95,4 @@ Stack trace:
 [22-Jun-2017 12:59:26 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_initialIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 20
 [22-Jun-2017 12:59:26 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_totalIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 26
 [22-Jun-2017 12:59:56 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_totalIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 26
+[22-Jun-2017 13:49:46 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_indexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 16
