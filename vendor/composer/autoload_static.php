@@ -447,6 +447,7 @@ class ComposerStaticInit9a627468225fcc2cb5e15e925a3b9dc6
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'Pagination\\Pagination' => __DIR__ . '/../..' . '/src/Pagination.php',
+        'Pagination\\StrategyGoogle' => __DIR__ . '/../..' . '/src/StrategyGoogle.php',
         'Pagination\\StrategyJumping' => __DIR__ . '/../..' . '/src/StrategyJumping.php',
         'Pagination\\StrategyPHPBB' => __DIR__ . '/../..' . '/src/StrategyPHPBB.php',
         'Pagination\\StrategyPaginationInterface' => __DIR__ . '/../..' . '/src/StrategyPaginationInterface.php',

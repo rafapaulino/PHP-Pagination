@@ -85,3 +85,13 @@ Stack trace:
 [21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
 [21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 87
 [21-Jun-2017 13:48:50 America/Sao_Paulo] PHP Notice:  Array to string conversion in C:\xampp\htdocs\php-pagination\examples\phpbb.php on line 88
+[22-Jun-2017 12:59:02 America/Sao_Paulo] PHP Notice:  Undefined variable: initialIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 11
+[22-Jun-2017 12:59:02 America/Sao_Paulo] PHP Fatal error:  Uncaught LengthException: Indexes must be greater than zero! in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php:64
+Stack trace:
+#0 C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php(13): Pagination\StrategyGoogle->checkIndexesValue()
+#1 C:\xampp\htdocs\php-pagination\examples\google.php(14): Pagination\StrategyGoogle->__construct(16, 4)
+#2 {main}
+  thrown in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 64
+[22-Jun-2017 12:59:26 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_initialIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 20
+[22-Jun-2017 12:59:26 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_totalIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 26
+[22-Jun-2017 12:59:56 America/Sao_Paulo] PHP Notice:  Undefined property: Pagination\StrategyGoogle::$_totalIndexes in C:\xampp\htdocs\php-pagination\src\StrategyGoogle.php on line 26

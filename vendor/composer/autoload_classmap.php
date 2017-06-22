@@ -383,6 +383,7 @@ return array(
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'Pagination\\Pagination' => $baseDir . '/src/Pagination.php',
+    'Pagination\\StrategyGoogle' => $baseDir . '/src/StrategyGoogle.php',
     'Pagination\\StrategyJumping' => $baseDir . '/src/StrategyJumping.php',
     'Pagination\\StrategyPHPBB' => $baseDir . '/src/StrategyPHPBB.php',
     'Pagination\\StrategyPaginationInterface' => $baseDir . '/src/StrategyPaginationInterface.php',
