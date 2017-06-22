@@ -34,7 +34,8 @@ This pagination returns only one PHP ArrayObject, so you create the layout part 
 
 ## Example of use
 
-The output HTML is fully static and uses relative paths to the asset files, which are also copied into the output folder. This means that you could, for example, point a HTTP server at the output folder and be done with it or push the output folder to Amazon S3.
+To use this class you must follow the code below. Do not forget to access the [examples folder here in the repository](https://github.com/rafapaulino/PHP-Pagination/tree/master/examples) with the usage examples for each page type.
+Also access [rafaacademy.com](http://rafaacademy.com/) for tips and tutorials on php and use of this class.
 
 ```php
 <?php
@@ -65,43 +66,3 @@ $indexes = $pagination->getIndexes(new StrategySimple(15));
 $iterator = $indexes->getIterator();
 ```
 To navigate between indexes you need to learn how to work with the [ArrayInterator](http://php.net/manual/pt_BR/class.arrayiterator.php) and [ArrayObject](http://php.net/manual/pt_BR/class.arrayobject.php) of PHP.
-
-
-## Writing your own layout
-
-`v2.0` makes it easier to get started with a custom layout via `--export`, which exports a built in layout as a starting point. Just pick a reasonable built in layout and start customizing. For example:
-
-```sh
-generate-md --export github --output ./my-layout
-```
-
-will export the `github` layout to `./my-layout`. To make use of your new layout:
-
-```sh
-generate-md --layout ./my-layout --input ./some-input --output ./output
-```
-
-If you look under `./my-layout`, you'll see that a layout folder consists of:
-
-- `./page.html`, the template to use in the layout
-- `./assets`, the assets folder to copy over to the output
-- `./partials`, the [partials](#partials) directory
-- `./helpers`, the [helpers](#helpers) directory
-
-See the next few sections for more details for how these features work.
-
-### Template Evaluation (page.html)
-
-The [handlebars.js](https://github.com/wycats/handlebars.js) template language is used to evaluate both the template and the markdown.
-
-Here is a list of all the built in features:
-
-- `{{~> content}}`: renders the markdown content
-- `{{asset 'asset-path'}}`: renders a specific asset path
-- `{{~> toc}}`: renders the table of contents
-- `{{title}}`: renders the title from the metadata section
-
-Any metadata fields you have defined in the page's metadata section can be referenced in `page.html` by name. For example, `{{title}}` is replaced with the value of the `title` metadata field when the template is rendered.
-
-You can include your own helpers and partials in your custom layout as shown below.
-
