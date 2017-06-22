@@ -5,6 +5,7 @@ use Pagination\Pagination;
 use Pagination\StrategySimple;
 use Pagination\StrategyPHPBB;
 use Pagination\StrategyJumping;
+use Pagination\StrategyGoogle;
 
 class PaginationTest extends \PHPUnit_Framework_TestCase {
 
@@ -199,5 +200,49 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(0, $initial->count());
         //test final
         $this->assertEquals(4, $final->count());
+	}
+
+    /**
+     * @expectedException LengthException
+     */
+    public function testJumpingTotalIndexValue()
+    {
+        new StrategyJumping(0);
+    }
+
+	public function testJumpingIndexesWithOneResult()
+	{
+		$pagination = new Pagination(1,10,1);
+        $indexes = $pagination->getIndexes(new StrategyJumping(20));
+        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $indexes->count());
+	}
+
+    public function testJumpingIndexesResults()
+	{
+        $pagination = new Pagination(1000,10,1);
+        $indexes = $pagination->getIndexes(new StrategyJumping(20));
+        $this->assertEquals(20, $indexes->count());
+	}
+
+    /**
+     * @expectedException LengthException
+     */
+    public function testGoogleTotalIndexValue()
+    {
+        new StrategyGoogle(0);
+    }
+
+	public function testGoogleIndexesWithOneResult()
+	{
+		$pagination = new Pagination(1,10,1);
+        $indexes = $pagination->getIndexes(new StrategyGoogle(20));
+        $this->assertEquals($pagination->getAllIndexesOfPages()->count(), $indexes->count());
+	}
+
+    public function testGoogleIndexesResults()
+	{
+        $pagination = new Pagination(1000,10,1);
+        $indexes = $pagination->getIndexes(new StrategyGoogle(20));
+        $this->assertEquals(20, $indexes->count());
 	}
 }
