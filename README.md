@@ -21,6 +21,8 @@ See the examples folder for using the class easily.
 
 ### Important informations
 
+- You need PHP 7.0 or higher to use this class.
+
 - I used the strategy pattern to create different pagination types. I put the examples in the examples folder.
 This pagination returns only one PHP ArrayObject, so you create the layout part as you wish.
 
@@ -30,20 +32,40 @@ This pagination returns only one PHP ArrayObject, so you create the layout part 
 
 -----
 
-## generate-md CLI options
+## Example of use
 
 The output HTML is fully static and uses relative paths to the asset files, which are also copied into the output folder. This means that you could, for example, point a HTTP server at the output folder and be done with it or push the output folder to Amazon S3.
 
-```html
-<ul class="nav nav-list">
-  {{#each headings}}
-    <li class="sidebar-header-{{depth}}"><a href="#{{id}}">{{text}}</a></li>
-  {{/each}}
-</ul>
+```php
+<?php
+require '../vendor/autoload.php';
+use Pagination\Pagination;
+use Pagination\StrategySimple;
+
+if ( isset($_GET['page']) && is_numeric($_GET['page']) )
+$page = $_GET['page'];
+else 
+$page = 1;
+
+//use pagination class with results, per page and page
+$pagination = new Pagination(1000, 10, $page);
+//get first page
+$pagination->getFirstPage();
+//get last page
+$pagination->getLastPage();
+//get previous page
+$pagination->getPreviousPage();
+//get next page
+$pagination->getNextPage();
+//get all indexes
+$all = $pagination->getAllIndexesOfPages();
+$iteratorAll = $all->getIterator();
+//get indexes in page stylized
+$indexes = $pagination->getIndexes(new StrategySimple(15));
+$iterator = $indexes->getIterator();
 ```
+To navigate between indexes you need to learn how to work with the [ArrayInterator](http://php.net/manual/pt_BR/class.arrayiterator.php) and [ArrayObject](http://php.net/manual/pt_BR/class.arrayobject.php) of PHP.
 
-
-If you take a look at [the `{{~> toc}}` built in partial](https://github.com/mixu/markdown-styles/blob/master/builtin/partials/toc.hbs), you can see that it is actually [iterating over a metadata field](#table-of-contents) called `headings` using the same syntax.
 
 ## Writing your own layout
 
