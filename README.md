@@ -37,6 +37,8 @@ This pagination returns only one PHP ArrayObject, so you create the layout part 
 To use this class you must follow the code below. Do not forget to access the [examples folder here in the repository](https://github.com/rafapaulino/PHP-Pagination/tree/master/examples) with the usage examples for each page type.
 Also access [rafaacademy.com](http://rafaacademy.com/) for tips and tutorials on php and use of this class.
 
+Install: composer require php-pagination/php-pagination
+
 ```php
 <?php
 require '../vendor/autoload.php';
