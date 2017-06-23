@@ -4,7 +4,7 @@ PHP paging class with 4 different page types:
 
 - `Simple Pagination:` Creates a simple pagination similar to Google.
 ![simple](https://raw.githubusercontent.com/rafapaulino/PHP-Pagination/master/doc/simple.png)
-- `PHPBB Pagination:` Paging in the same style as the PHPBB CMS. In addition to the normal pages you have the markers with the last pages and home pages.
+- `PHPBB/Digg Pagination:` Paging in the same style as the PHPBB CMS/Digg. In addition to the normal pages you have the markers with the last pages and home pages.
 ![phpbb](https://raw.githubusercontent.com/rafapaulino/PHP-Pagination/master/doc/phpbb.png)
 - `Jumping Pagination:` Paging where the markers "jump" after a certain value, for example: Every 10 page markers are displayed from 1 to 10 - 11 to 20 - 21 to 30 and so on.
 ![jumping](https://raw.githubusercontent.com/rafapaulino/PHP-Pagination/master/doc/jumping.png)
