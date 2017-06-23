@@ -13,6 +13,11 @@ PHP paging class with 4 different page types:
 
 See the examples folder for using the class easily.
 
+[![Latest Stable Version](https://poser.pugx.org/php-pagination/php-pagination/v/stable)](https://packagist.org/packages/php-pagination/php-pagination)
+[![Total Downloads](https://poser.pugx.org/php-pagination/php-pagination/downloads)](https://packagist.org/packages/php-pagination/php-pagination)
+[![Latest Unstable Version](https://poser.pugx.org/php-pagination/php-pagination/v/unstable)](https://packagist.org/packages/php-pagination/php-pagination)
+[![Monthly Downloads](https://poser.pugx.org/php-pagination/php-pagination/d/monthly)](https://packagist.org/packages/php-pagination/php-pagination)
+
 
 ## Features
 
