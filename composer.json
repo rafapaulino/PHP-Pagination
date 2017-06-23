@@ -1,6 +1,7 @@
 {
     "name": "php-pagination/php-pagination",
     "description": "PHP Pagination Class with 4 types: Simple Pagination, Google Pagination, Digg/PHPBB Pagination Style.",
+    "keywords": ["page","paging", "paginator", "pagination"],
     "license": "BSD-3-Clause",
     "authors": [
         {

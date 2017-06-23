@@ -394,3 +394,4 @@ __pycache__/
 errors.log 
 web.config 
 /vendor
+composer.lock 
