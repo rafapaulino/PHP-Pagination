@@ -22,6 +22,7 @@ See the examples folder for using the class easily.
 
 ## Features
 
+- `v2.0.1` Added method to get start for sql clauses.
 - `v2.0.0` The methods were refactored, unit tests added, examples and design patters.
 
 
@@ -72,5 +73,8 @@ $iteratorAll = $all->getIterator();
 //get indexes in page stylized
 $indexes = $pagination->getIndexes(new StrategySimple(15));
 $iterator = $indexes->getIterator();
+
+//get start for sql queries (optional - Note: This paging does not use a bank connection)
+$pagination->getStartForSqlQueries();
 ```
 To navigate between indexes you need to learn how to work with the [ArrayInterator](http://php.net/manual/pt_BR/class.arrayiterator.php) and [ArrayObject](http://php.net/manual/pt_BR/class.arrayobject.php) of PHP.
