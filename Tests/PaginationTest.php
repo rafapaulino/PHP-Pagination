@@ -67,6 +67,11 @@ class PaginationTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(10, $this->_pagination->getTotalOfPages());
     }
 
+    public function testStart()
+    {
+        $this->assertEquals(0, $this->_pagination->getStartForSqlQueries());
+    }
+
 	public function testIndexesOfPagesIsArrayObject()
     {
         $this->assertInstanceOf('ArrayObject', $this->_pagination->getAllIndexesOfPages());

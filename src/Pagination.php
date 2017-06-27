@@ -13,6 +13,7 @@ class Pagination {
     protected $_lastPage;
     protected $_nextPage;
     protected $_previousPage;
+    protected $_startForSqlQueries;
 
     public function __construct( int $totalOfResults, int $recordsPerPage, int $page ) {
         $this->setPage($page);
@@ -27,6 +28,7 @@ class Pagination {
         $this->setLastPage();
         $this->setNextPage();
         $this->setPreviousPage();
+        $this->setStartForSqlQueries();
     }
 
     public function getPage(): int {
@@ -132,6 +134,14 @@ class Pagination {
 		$prevPage = 1;
         
         $this->_previousPage = (int) $prevPage;
+    }
+
+    public function getStartForSqlQueries(): int {
+        return $this->_startForSqlQueries;
+    }
+
+    protected function setStartForSqlQueries() {
+        $this->_startForSqlQueries = intval($this->getPage() - 1) * $this->getRecordsPerPage();
     }
 
     public function goTo(int $page): int {
